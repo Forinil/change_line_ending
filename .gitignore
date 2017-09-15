@@ -51,3 +51,6 @@ Gemfile.lock
 
 # RubyMine project files
 .idea/
+
+# Script output files
+*.log
