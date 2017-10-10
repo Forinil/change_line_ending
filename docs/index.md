@@ -1,4 +1,3 @@
-# ChangeLineEnding
 Ruby script that changes line endings 
 
 ### Regular usage ###
