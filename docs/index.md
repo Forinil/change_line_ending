@@ -25,15 +25,15 @@ so if `directory_path` contains binary files it's best to specify `included_rege
 git clone https://github.com/Forinil/change_line_ending.git
 cd change_line_ending
 docker build -t change_line_ending .
-docker run -it --rm change_line_ending directory_path desired_line_ending included_regexp(optional) log_dir(optional)
+docker run -it --rm  -v directory_path:/files change_line_ending /files desired_line_ending included_regexp(optional) log_dir(optional)
 ```
 
 #### With docker repository ####
 [Docker Hub repository](https://hub.docker.com/r/forinil/change_line_ending/)
 ```bash
 docker pull forinil/change_line_ending
-docker -t forinil/change_line_ending change_line_ending
-docker run -it --rm change_line_ending directory_path desired_line_ending included_regexp(optional) log_dir(optional)
+docker tag forinil/change_line_ending change_line_ending
+docker run -it --rm  -v directory_path:/files change_line_ending /files desired_line_ending included_regexp(optional) log_dir(optional)
 ```
 
 Of course there is no need to tag docker repository image with shorter name before using it, it is simply 
@@ -45,5 +45,5 @@ regular expression as well).
 
 For example:
 ```bash
-docker run -it --rm -v `$(pwd)`:/logs -e LOG_PATH=/logs change_line_ending directory_path desired_line_ending
+docker run -it --rm -v directory_path:/files -v `$(pwd)`:/logs -e LOG_PATH=/logs change_line_ending /files desired_line_ending
 ```

@@ -5,7 +5,9 @@
 # IntelliJ project files
 .idea
 out
-gen### Ruby template
+gen
+
+### Ruby template
 *.gem
 *.rbc
 /.config
@@ -42,6 +44,7 @@ build-iPhoneSimulator/
 /_yardoc/
 /doc/
 /rdoc/
+docs/
 
 ## Environment normalization:
 /.bundle/
